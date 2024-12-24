@@ -1,6 +1,6 @@
-# 🚀 OllamaLocalHub
+# 🐳 DockerLlama
 
-Your personal AI workspace powered by Ollama. OllamaLocalHub provides a complete local environment for running and managing AI models through an intuitive web interface, all while keeping your data private and secure.
+Your containerized AI companion. DockerLlama brings the power of Ollama to your local environment through Docker, making AI deployment as easy as running a container. Complete with a sleek web interface and CLI tools, all while keeping your data secure in your own infrastructure.
 
 ## 🌟 Features
 
