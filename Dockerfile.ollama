@@ -1,0 +1,23 @@
+# Dockerfile.ollama
+FROM ollama/ollama:latest
+
+# Set working directory
+WORKDIR /root/.ollama
+
+# Install basic utilities
+RUN apt-get update && apt-get install -y \
+  curl \
+  wget \
+  bash \
+  && rm -rf /var/lib/apt/lists/*
+
+# Copy scripts
+COPY ./scripts/ /root/.ollama/scripts/
+RUN chmod +x /root/.ollama/scripts/*.sh
+
+# Expose port
+EXPOSE 11434
+
+# Set default command
+ENTRYPOINT ["/bin/ollama"]
+CMD ["serve"]

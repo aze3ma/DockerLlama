@@ -1,0 +1,59 @@
+# Environment variables
+.env
+
+# Volume data
+volumes/*
+!volumes/.gitkeep
+
+# Ollama specific
+volumes/ollama/models/*
+volumes/ollama/config/*
+volumes/ollama/libraries/*
+volumes/ollama/data/*
+
+# WebUI specific
+volumes/webui/data/*
+volumes/webui/config/*
+volumes/webui/logs/*
+volumes/webui/persistent/*
+
+# Keep volume directories
+!volumes/ollama/models/.gitkeep
+!volumes/ollama/config/.gitkeep
+!volumes/ollama/libraries/.gitkeep
+!volumes/ollama/data/.gitkeep
+!volumes/webui/data/.gitkeep
+!volumes/webui/config/.gitkeep
+!volumes/webui/logs/.gitkeep
+!volumes/webui/persistent/.gitkeep
+
+# Docker
+.docker
+docker-compose.override.yml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.idea
+.vscode
+*.swp
+*.swo
