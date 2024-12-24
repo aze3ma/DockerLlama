@@ -23,8 +23,8 @@ Your containerized AI companion. DockerLlama brings the power of Ollama to your 
 1. **Clone the repository**
 
     ```bash
-    git clone <your-repo-url>
-    cd ollama
+    git clone git@github.com:aze3ma/DockerLlama.git
+    cd DockerLlama
     ```
 
 2. **Run the start script**
