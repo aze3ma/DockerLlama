@@ -152,4 +152,4 @@ If you find this project helpful, please give it a star! For issues and feature 
 
 ---
 
-Made with ❤️ by the community
+Made with ❤️ by aze3ma
