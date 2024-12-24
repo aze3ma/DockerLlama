@@ -1,4 +1,4 @@
-# 🐳 DockerLlama
+# 🐳 LlamaBase
 
 A simple Docker setup for running Ollama locally with a web interface. Run AI models on your own machine, with your data staying private and secure.
 
@@ -6,8 +6,8 @@ A simple Docker setup for running Ollama locally with a web interface. Run AI mo
 
 ```bash
 # Clone and enter the repository
-git clone git@github.com:aze3ma/DockerLlama.git
-cd DockerLlama
+git clone git@github.com:aze3ma/LlamaBase.git
+cd LlamaBase
 
 # Start everything with one command
 ./start.sh
