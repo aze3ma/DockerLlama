@@ -1,9 +1,11 @@
 # Environment variables
 .env
+models/
 
 # Volume data
-volumes/*
+volumes/
 !volumes/.gitkeep
+volumes/*
 
 # Ollama specific
 volumes/ollama/models/*
