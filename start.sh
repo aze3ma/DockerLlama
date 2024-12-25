@@ -70,13 +70,29 @@ if [ -f "$HOME/.zshrc" ]; then
     SHELL_FILE="$HOME/.zshrc"
 elif [ -f "$HOME/.bashrc" ]; then
     SHELL_FILE="$HOME/.bashrc"
+elif [ -f "$HOME/.config/fish/config.fish" ]; then
+    SHELL_FILE="$HOME/.config/fish/config.fish"
+else
+    # Create fish config if it doesn't exist
+    mkdir -p "$HOME/.config/fish"
+    touch "$HOME/.config/fish/config.fish"
+    SHELL_FILE="$HOME/.config/fish/config.fish"
 fi
 
 if [ ! -z "$SHELL_FILE" ]; then
     # Check if alias already exists
     if ! grep -q 'alias ollama="docker exec -it ollama ollama"' "$SHELL_FILE"; then
         print "Adding ollama alias to $SHELL_FILE..."
-        echo 'alias ollama="docker exec -it ollama ollama"' >> "$SHELL_FILE"
+        # Special handling for fish shell
+        if [[ "$SHELL_FILE" == *"fish"* ]]; then
+            mkdir -p "$HOME/.config/fish/functions"
+            echo 'function ollama
+    docker exec -it ollama ollama $argv
+end' > "$HOME/.config/fish/functions/ollama.fish"
+            print "Added fish function to $HOME/.config/fish/functions/ollama.fish"
+        else
+            echo 'alias ollama="docker exec -it ollama ollama"' >> "$SHELL_FILE"
+        fi
         print "To use the ollama command, please run: ${GREEN}source $SHELL_FILE${NC}"
     fi
 fi
